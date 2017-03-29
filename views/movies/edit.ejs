@@ -1,0 +1,6 @@
+<h1>Editar Movie</h1>
+<form method='post' action='/movies/<%= movie.id %>'>
+<input type='hidden' name='_method' value='put'>
+<% include _form.ejs %>
+</form>
+<a href="/movies"> Volver </a>

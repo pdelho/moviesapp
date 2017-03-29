@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+	<title>MoviesApp</title>
+</head>
+<body>
+	<header>
+		<h1> Movies App - Rate your movies!</h1>
+		<nav>
+			<a href="/">Home</a>
+			<a href="/Movies">Movies</a>
+		</nav>
+	</header>
+<header>
+<h2> Movies </h2>
+</header>
+<% for (var i in movies) { %>
+<article>
+<header>
+<h3>
+<a href='/movies/<%= movies[i].id %>' class='titlelink'><%= movies[i].title %> </a>
+</h3>
+</header>
+<p>
+<%= movies[i].description.slice(0,300) %> ...
+</p>
+<footer>
+<form method='post' action='/movies/<%= movies[i].id %>'>
+<input type='hidden' name='_method' value='delete'>
+<a href="/movies/<%= movies[i].id %>/edit"> Edit </a>
+<a href="" onclick="submit();return false"> Delete </a>
+</form>
+</footer>
+</article>
+<% }; %>
+<footer>
+<nav>
+<a href="/movies/new" style="color:black"> Create new Movie </a>
+</nav>
+</footer>
+<footer>
+		<p> Pablo del Hoyo Rodríguez </p>
+	</footer>
+</body>
+</html>

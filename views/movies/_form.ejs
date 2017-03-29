@@ -1,0 +1,15 @@
+
+
+<div class="field">
+  <label for="post_title">Title</label><br />
+  <input type="text" id="post_title" name="movie[title]" size='80' value='<%= movie.title%>' />
+</div>
+
+<div class="field">
+  <label for="post_body">Description</label><br />
+  <textarea id="post_body" name="movie[description]" rows="20" cols="80"><%= movie.description %></textarea>
+</div>
+
+<div class="actions">
+  <input name="commit" type="submit" value="Save" />
+</div>

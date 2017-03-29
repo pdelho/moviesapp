@@ -1,0 +1,13 @@
+<h2>Movie</h2>
+<p>
+<b><%= movie.title %></b>
+<br />
+by
+<em>El autor</em>
+</p>
+<p>
+<%= movie.createdAt.toLocaleDateString() %>
+</p>
+<p><%- escapeText(movie.body) %></p>
+<a href="/movies/<%= movie.id %>/edit"> Edit </a>
+<a href="/movies"> Back </a>

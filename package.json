@@ -11,8 +11,10 @@
     "debug": "~2.6.0",
     "ejs": "~2.5.5",
     "express": "~4.14.1",
+    "express-partials": "git://github.com/publicclass/express-partials.git#66f4dc09f0",
     "morgan": "~1.7.0",
+    "sequelize-cli": "^2.7.0",
     "serve-favicon": "~2.3.2",
-    "express-partials":"git://github.com/publicclass/express-partials.git#66f4dc09f0"
+    "sqlite3": "^3.1.8"
   }
 }
