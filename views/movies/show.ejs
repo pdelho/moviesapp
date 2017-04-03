@@ -5,9 +5,7 @@
 by
 <em>El autor</em>
 </p>
-<p>
-<%= movie.createdAt.toLocaleDateString() %>
-</p>
-<p><%- escapeText(movie.body) %></p>
+
+<p><%- escapeText(movie.description) %></p>
 <a href="/movies/<%= movie.id %>/edit"> Edit </a>
 <a href="/movies"> Back </a>
