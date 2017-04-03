@@ -8,7 +8,7 @@ exports.index = function(req, res, next) {
 
     models.Movie
         .findAll({order: 'updatedAt DESC', attributes: ['title', 'description']})
-        .success(function(movies) {
+        .then(function(movies) {
             switch (format) { 
               case 'html':
               case 'htm':
@@ -76,7 +76,7 @@ exports.show = function(req, res, next) {
     
     models.Movie
         .find({where: {id: Number(id)}, attributes: ['description', 'title']})
-        .success(function(movie) {
+        .then(function(movie) {
             switch (format) { 
               case 'html':
               case 'htm':
@@ -168,7 +168,7 @@ exports.create = function(req, res, next) {
     // } 
     
     movie.save()
-        .success(function() {
+        .then(function() {
             res.redirect('/movies');
         })
         .error(function(error) {
@@ -184,7 +184,7 @@ exports.edit = function(req, res, next) {
     
     models.Movie
         .find({where: {id: Number(id)}})
-        .success(function(movie) {
+        .then(function(movie) {
             if (movie) {
                 res.render('movies/edit', {movie: movie});
             } else {
@@ -205,7 +205,7 @@ exports.update = function(req, res, next) {
     
     models.Movie
         .find({where: {id: Number(id)}})
-        .success(function(movie) {
+        .then(function(movie) {
             if (movie) {
                 movie.title = req.body.movie.title;
                 movie.description = req.body.movie.description;
@@ -242,7 +242,7 @@ exports.destroy = function(req, res, next) {
     
     models.Movie
         .find({where: {id: Number(id)}})
-        .success(function(movie) {
+        .then(function(movie) {
             if (movie) {
                 
                 movie.destroy()
